@@ -37,6 +37,21 @@ st.set_page_config(
 inject_theme()
 
 
+# ---------------- First-run bootstrap ----------------
+# On a fresh deploy (e.g. Streamlit Cloud) the gitignored model files aren't
+# present. Build them once before anything tries to load them.
+@st.cache_resource(show_spinner="First run: preparing data and training models (~1 min)...")
+def _bootstrap() -> bool:
+    from src.bootstrap import ensure_artifacts, ensure_faiss
+
+    ensure_artifacts()
+    ensure_faiss()
+    return True
+
+
+_bootstrap()
+
+
 # ---------------- Data ----------------
 @st.cache_data(show_spinner=False)
 def _load_data() -> pd.DataFrame:
