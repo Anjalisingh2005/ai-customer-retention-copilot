@@ -1,0 +1,14 @@
+artifact_uri: /Users/anjalisingh/Downloads/churn-copilot/mlruns/877414222230827668/0978fd0e0340405d8d6fb50516b0feb4/artifacts
+end_time: 1780228419930
+entry_point_name: ''
+experiment_id: '877414222230827668'
+lifecycle_stage: active
+run_id: 0978fd0e0340405d8d6fb50516b0feb4
+run_name: xgboost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780228418221
+status: 3
+tags: []
+user_id: anjalisingh

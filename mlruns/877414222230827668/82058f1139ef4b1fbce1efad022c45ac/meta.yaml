@@ -1,0 +1,14 @@
+artifact_uri: /Users/anjalisingh/Downloads/churn-copilot/mlruns/877414222230827668/82058f1139ef4b1fbce1efad022c45ac/artifacts
+end_time: 1780228424003
+entry_point_name: ''
+experiment_id: '877414222230827668'
+lifecycle_stage: active
+run_id: 82058f1139ef4b1fbce1efad022c45ac
+run_name: promotion
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780228422284
+status: 3
+tags: []
+user_id: anjalisingh

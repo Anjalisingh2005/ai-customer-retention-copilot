@@ -1,0 +1,14 @@
+artifact_uri: /Users/anjalisingh/Downloads/churn-copilot/mlruns/877414222230827668/f8c7f8c6ad2746c4a2eb39e35a93b15c/artifacts
+end_time: 1780228416410
+entry_point_name: ''
+experiment_id: '877414222230827668'
+lifecycle_stage: active
+run_id: f8c7f8c6ad2746c4a2eb39e35a93b15c
+run_name: logistic_regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780228412627
+status: 3
+tags: []
+user_id: anjalisingh

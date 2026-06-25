@@ -27,7 +27,6 @@ artifacts/reports/*
 !artifacts/reports/.gitkeep
 artifacts/faiss/*
 !artifacts/faiss/.gitkeep
-mlruns/
 
 # Notebooks
 .ipynb_checkpoints/

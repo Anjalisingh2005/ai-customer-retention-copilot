@@ -1,0 +1,23 @@
+artifact_path: /Users/anjalisingh/Downloads/churn-copilot/mlruns/877414222230827668/models/m-64697132a66d4cbe9d2217f21ef28069/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+    skops_trusted_types: null
+mlflow_version: 3.12.0
+model_id: m-64697132a66d4cbe9d2217f21ef28069
+model_size_bytes: 2170589
+model_uuid: m-64697132a66d4cbe9d2217f21ef28069
+prompts: null
+run_id: 016eb9b0101046dd9e68bf576230583b
+utc_time_created: '2026-05-31 11:53:36.429992'

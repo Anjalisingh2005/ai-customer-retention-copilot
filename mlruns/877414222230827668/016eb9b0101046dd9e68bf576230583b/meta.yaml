@@ -1,0 +1,14 @@
+artifact_uri: /Users/anjalisingh/Downloads/churn-copilot/mlruns/877414222230827668/016eb9b0101046dd9e68bf576230583b/artifacts
+end_time: 1780228418219
+entry_point_name: ''
+experiment_id: '877414222230827668'
+lifecycle_stage: active
+run_id: 016eb9b0101046dd9e68bf576230583b
+run_name: random_forest
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780228416412
+status: 3
+tags: []
+user_id: anjalisingh

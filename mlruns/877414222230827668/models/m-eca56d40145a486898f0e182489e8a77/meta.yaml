@@ -1,0 +1,10 @@
+artifact_location: /Users/anjalisingh/Downloads/churn-copilot/mlruns/877414222230827668/models/m-eca56d40145a486898f0e182489e8a77/artifacts
+creation_timestamp: 1780228418230
+experiment_id: '877414222230827668'
+last_updated_timestamp: 1780228419929
+model_id: m-eca56d40145a486898f0e182489e8a77
+model_type: null
+name: model
+source_run_id: 0978fd0e0340405d8d6fb50516b0feb4
+status: 2
+status_message: null
