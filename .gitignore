@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Env / secrets
+.env
+*.pem
+*.key
+
+# Data / artifacts (regenerable)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/synthetic/*
+!data/synthetic/.gitkeep
+artifacts/models/*
+!artifacts/models/.gitkeep
+artifacts/encoders/*
+!artifacts/encoders/.gitkeep
+artifacts/reports/*
+!artifacts/reports/.gitkeep
+artifacts/faiss/*
+!artifacts/faiss/.gitkeep
+mlruns/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store

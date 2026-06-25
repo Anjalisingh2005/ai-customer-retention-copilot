@@ -1,0 +1,54 @@
+version: "3.9"
+
+# Local dev stack:
+#   docker compose -f deployment/docker/docker-compose.yml up --build
+#
+# Mounts ../../artifacts as a shared volume so both api and dashboard see the
+# same trained model and FAISS index.
+
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.api
+    image: churn-copilot/api:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../../.env
+    volumes:
+      - ../../artifacts:/app/artifacts
+      - ../../data:/app/data
+      - ../../mlruns:/app/mlruns
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.dashboard
+    image: churn-copilot/dashboard:latest
+    ports:
+      - "8501:8501"
+    env_file:
+      - ../../.env
+    environment:
+      - COPILOT_API_URL=http://api:8000
+    volumes:
+      - ../../artifacts:/app/artifacts
+      - ../../data:/app/data
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.10.2
+    command: >
+      mlflow server
+      --backend-store-uri sqlite:////mlruns/mlflow.db
+      --default-artifact-root /mlruns
+      --host 0.0.0.0 --port 5000
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../../mlruns:/mlruns
+    restart: unless-stopped

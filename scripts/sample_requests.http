@@ -1,0 +1,32 @@
+### Health
+GET http://localhost:8000/health
+
+### Predict churn
+POST http://localhost:8000/predict_churn
+Content-Type: application/json
+
+{"customer_id": "7590-VHVEG"}
+
+### SHAP analysis
+POST http://localhost:8000/customer_analysis
+Content-Type: application/json
+
+{"customer_id": "7590-VHVEG"}
+
+### LLM+RAG strategy
+POST http://localhost:8000/generate_strategy
+Content-Type: application/json
+
+{"customer_id": "7590-VHVEG"}
+
+### ROI for explicit offer
+POST http://localhost:8000/customer_roi
+Content-Type: application/json
+
+{"customer_id": "7590-VHVEG", "offer_key": "loyalty_discount_15pct_12mo"}
+
+### Full multi-agent copilot
+POST http://localhost:8000/copilot/run
+Content-Type: application/json
+
+{"customer_id": "7590-VHVEG"}
