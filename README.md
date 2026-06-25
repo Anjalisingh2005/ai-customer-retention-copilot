@@ -156,11 +156,3 @@ MLFLOW_TRACKING_URI=./mlruns
 FAISS_INDEX_DIR=./artifacts/faiss
 MODEL_DIR=./artifacts/models
 ```
-
-## Resume bullets
-
-- Developed an end-to-end customer retention platform using XGBoost, LangGraph, Claude (Anthropic), and FastAPI to predict churn and automate retention decision-making.
-- Built a multi-agent architecture (Profile → Risk → Explanation → Retention → ROI) on LangGraph for end-to-end retention orchestration.
-- Implemented RAG-based retrieval using FAISS over historical retention campaigns and customer success playbooks.
-- Achieved ROC-AUC > 0.85 on churn prediction and improved recommendation relevance through retrieval-augmented generation.
-- Containerized services using Docker and tracked experiments with MLflow; deployed to AWS (S3 / SageMaker / Bedrock / ECS / CloudWatch).
