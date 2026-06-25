@@ -1,6 +1,6 @@
 # AI-Powered Customer Retention Copilot
 
-End-to-end customer retention platform that goes beyond "will the customer churn?" to answer **why**, **what to do**, **what's the ROI**, and **who to prioritize** — wired together as a multi-agent system on top of explainable churn models, RAG, and a FastAPI service.
+End-to-end customer retention platform that goes beyond "will the customer churn?" to answer **why**, **what to do**, **what's the ROI**, and **who to prioritize** - wired together as a multi-agent system on top of explainable churn models, RAG, and a FastAPI service.
 
 ## Architecture
 

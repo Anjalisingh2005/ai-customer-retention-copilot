@@ -27,10 +27,10 @@ class LLMResponse:
 
 
 class _DummyLLM:
-    """Used when no API key is configured — keeps the pipeline runnable in tests/CI."""
+    """Used when no API key is configured - keeps the pipeline runnable in tests/CI."""
 
     def complete(self, *, system: str, user: str, max_tokens: int | None = None) -> LLMResponse:
-        log.warning("ANTHROPIC_API_KEY not set — returning stub LLM response.")
+        log.warning("ANTHROPIC_API_KEY not set - returning stub LLM response.")
         return LLMResponse(
             text=(
                 "Customer Risk Analysis\n"
@@ -74,7 +74,7 @@ class AnthropicLLM:
 
 
 class BedrockLLM:
-    """AWS Bedrock Claude — same interface as AnthropicLLM."""
+    """AWS Bedrock Claude - same interface as AnthropicLLM."""
 
     def __init__(self, model_id: str | None = None, max_tokens: int | None = None):
         import boto3

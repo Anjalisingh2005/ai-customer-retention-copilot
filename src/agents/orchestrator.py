@@ -59,7 +59,7 @@ def get_graph():
 
 
 def run_sequential(initial: CopilotState) -> CopilotState:
-    """Fallback runner — same semantics as the LangGraph compiled flow."""
+    """Fallback runner - same semantics as the LangGraph compiled flow."""
     state = dict(initial)
     state.setdefault("trace", [])
     state.setdefault("errors", [])
@@ -79,6 +79,6 @@ def run(customer_id: str) -> CopilotState:
     }
     graph = get_graph()
     if graph is None:
-        log.warning("LangGraph not available — running sequential fallback.")
+        log.warning("LangGraph not available - running sequential fallback.")
         return run_sequential(initial)
     return graph.invoke(initial)

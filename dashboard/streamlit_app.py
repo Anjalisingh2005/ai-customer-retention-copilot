@@ -1,4 +1,4 @@
-"""Retention Copilot — dark dashboard built on native Streamlit components."""
+"""Retention Copilot - dark dashboard built on native Streamlit components."""
 from __future__ import annotations
 
 import sys
@@ -142,7 +142,7 @@ with tab_portfolio:
             st.subheader("Segment breakdown")
             seg = pd.DataFrame(segment_summary(scored))
             if not seg.empty:
-                # Drop any rows with a missing segment label (defensive — would otherwise
+                # Drop any rows with a missing segment label (defensive - would otherwise
                 # render as "undefined" in Plotly).
                 seg = seg.dropna(subset=["segment"]).copy()
                 seg["segment"] = seg["segment"].astype(str)
@@ -281,7 +281,7 @@ with tab_customer:
 
         # ---- CSM brief ----
         st.markdown("")
-        st.info(f"**CSM brief** — {state.get('explanation_text', '(no explanation)')}")
+        st.info(f"**CSM brief** - {state.get('explanation_text', '(no explanation)')}")
 
         # ---- SHAP drivers ----
         st.subheader("Top churn drivers (SHAP)")
@@ -333,15 +333,15 @@ with tab_customer:
                     st.metric("Revenue saved", f"${rec.get('expected_revenue_saved', 0):,.0f}",
                               delta="next 12 mo", delta_color="off")
                     roi_val = rec.get("roi_multiple")
-                    roi_disp = f"{roi_val:.2f}×" if isinstance(roi_val, (int, float)) else "—"
+                    roi_disp = f"{roi_val:.2f}×" if isinstance(roi_val, (int, float)) else "-"
                     pb = rec.get("payback_months")
-                    pb_disp = f"Payback {pb} mo" if pb is not None else "Payback —"
+                    pb_disp = f"Payback {pb} mo" if pb is not None else "Payback -"
                     st.metric("ROI multiple", roi_disp, delta=pb_disp, delta_color="off")
 
         # ---- Alternative offers ----
         alt = state.get("roi_estimates", [])
         if alt:
-            st.subheader("All offer alternatives — ranked")
+            st.subheader("All offer alternatives - ranked")
             alt_df = pd.DataFrame(alt)[[
                 "description", "offer_cost", "expected_revenue_saved",
                 "net_value", "roi_multiple", "payback_months",

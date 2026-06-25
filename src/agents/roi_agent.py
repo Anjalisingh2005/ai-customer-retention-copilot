@@ -1,4 +1,4 @@
-"""Agent 5 — ROI Agent.
+"""Agent 5 - ROI Agent.
 
 Scores the LLM-chosen offer + ranks all alternatives so the dashboard can show
 "this is what we picked, here's the rest of the menu and why."

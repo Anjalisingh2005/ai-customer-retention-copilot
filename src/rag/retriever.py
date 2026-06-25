@@ -2,7 +2,7 @@
 
 Embedding model: a local SentenceTransformer (no API call, no rate limits,
 free at inference). For production at scale, swap `_Embedder` for an
-embedding API — the interface is the same `.encode(list[str]) -> np.ndarray`.
+embedding API - the interface is the same `.encode(list[str]) -> np.ndarray`.
 """
 from __future__ import annotations
 

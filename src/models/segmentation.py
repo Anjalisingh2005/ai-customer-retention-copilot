@@ -1,8 +1,8 @@
 """Customer segmentation: business quadrants + KMeans behavioural clusters.
 
 Two complementary views:
-1. **Business quadrants** (value × risk) — what stakeholders ask for.
-2. **KMeans on behavioural fields** — what the data tells us, useful for
+1. **Business quadrants** (value × risk) - what stakeholders ask for.
+2. **KMeans on behavioural fields** - what the data tells us, useful for
    discovering segments the business hasn't named yet.
 """
 from __future__ import annotations

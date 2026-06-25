@@ -17,7 +17,7 @@ def main() -> None:
 
     state = run_copilot(args.customer_id)
     if args.json:
-        # state contains the full profile dict — keep printable size sane.
+        # state contains the full profile dict - keep printable size sane.
         printable = {k: v for k, v in state.items() if k != "profile"}
         print(json.dumps(printable, indent=2, default=str))
         return

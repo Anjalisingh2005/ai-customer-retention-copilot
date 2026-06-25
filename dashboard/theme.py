@@ -1,7 +1,7 @@
 """Dark theme + Plotly helpers.
 
 Design philosophy: use NATIVE Streamlit components everywhere, restyle via CSS.
-We do not emit custom HTML cards — those are fragile under Streamlit's markdown
+We do not emit custom HTML cards - those are fragile under Streamlit's markdown
 parser. Every visual primitive in the dashboard is `st.metric`, `st.container`,
 `st.columns`, `st.dataframe`, etc., dressed up with `[data-testid]` selectors.
 """
@@ -10,10 +10,10 @@ from __future__ import annotations
 import streamlit as st
 
 # ---------- Brand palette ----------
-ACCENT = "#a78bfa"          # violet 400 — primary accent
+ACCENT = "#a78bfa"          # violet 400 - primary accent
 ACCENT_DEEP = "#8b5cf6"     # violet 500
-ACCENT_2 = "#22d3ee"        # cyan 400 — secondary
-ACCENT_3 = "#f472b6"        # pink 400 — tertiary
+ACCENT_2 = "#22d3ee"        # cyan 400 - secondary
+ACCENT_3 = "#f472b6"        # pink 400 - tertiary
 
 BG = "#0b0b12"
 SURFACE = "#13131c"

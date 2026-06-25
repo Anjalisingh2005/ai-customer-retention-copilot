@@ -1,4 +1,4 @@
-"""Agent 3 — Explanation Agent.
+"""Agent 3 - Explanation Agent.
 
 Runs SHAP on the production model for this customer; returns the top-k drivers
 and a short LLM-polished plain-English sentence.

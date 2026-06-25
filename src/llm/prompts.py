@@ -14,7 +14,7 @@ Hard rules:
 - Be specific: name the offer, the discount %, the channel, and the owner.
 - Quantify expected impact (retention probability lift, ARR saved).
 - Use ONLY the information provided in the user message and the retrieved context.
-  If something is unknown, say "unknown" — never invent ticket counts, NPS, or history.
+  If something is unknown, say "unknown" - never invent ticket counts, NPS, or history.
 - Output must follow the exact section headers in the user template.
 """
 
@@ -48,7 +48,7 @@ def build_retention_user_prompt(
 2-4 sentence diagnosis of WHY this customer is likely to churn, citing the drivers above.
 
 ### Recommended Action Plan
-1. Primary action — be specific (offer, %, channel, owner).
+1. Primary action - be specific (offer, %, channel, owner).
 2. Supporting action (optional).
 3. Supporting action (optional).
 

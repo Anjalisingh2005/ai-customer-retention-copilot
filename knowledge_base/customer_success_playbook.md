@@ -1,6 +1,6 @@
 # Customer Success Playbook
 
-## Playbook 1 — High Value + High Risk (the segment that matters most)
+## Playbook 1 - High Value + High Risk (the segment that matters most)
 
 **Trigger:** churn_probability >= 0.6 AND (monthly_charges >= 70 OR tenure >= 24).
 
@@ -17,7 +17,7 @@
 5. Confirm acceptance in writing within 24h.
 6. Log outcome in CRM; mark cohort for 90-day check-in.
 
-## Playbook 2 — High Value + Low Risk (VIPs)
+## Playbook 2 - High Value + Low Risk (VIPs)
 
 **Trigger:** monthly_charges >= 70 AND churn_probability < 0.3.
 
@@ -29,18 +29,18 @@
 3. Anniversary acknowledgment at tenure milestones (12, 24, 36 months).
 4. Suggest 1 relevant upgrade per year (do not push).
 
-## Playbook 3 — Low Value + High Risk
+## Playbook 3 - Low Value + High Risk
 
 **Trigger:** monthly_charges < 50 AND churn_probability >= 0.6.
 
-**Goal:** retain efficiently — never spend more than 2 months of revenue.
+**Goal:** retain efficiently - never spend more than 2 months of revenue.
 
 **Steps:**
 1. Email-only campaign (no human touch).
 2. Offer: free OnlineBackup or a single $10 bill credit.
 3. If no response in 14 days, drop from save list. Acceptable to lose.
 
-## Playbook 4 — Low Value + Low Risk
+## Playbook 4 - Low Value + Low Risk
 
 **Trigger:** Default segment for everyone else.
 
@@ -49,10 +49,10 @@
 **Steps:**
 1. Quarterly NPS pulse.
 2. Trigger Playbook 1 or 3 only if signals cross the risk threshold.
-3. No proactive outreach otherwise — preserves CSM capacity for higher-impact segments.
+3. No proactive outreach otherwise - preserves CSM capacity for higher-impact segments.
 
 ## Cross-segment guardrails
 
 - If the LLM-suggested offer exceeds the CSM's approval authority, surface "needs manager approval" before sending.
-- Never bundle 3+ offers in one outreach — acceptance drops sharply ("offer overload").
+- Never bundle 3+ offers in one outreach - acceptance drops sharply ("offer overload").
 - Always include a specific calendar date the offer expires (urgency drives acceptance ~18% higher).

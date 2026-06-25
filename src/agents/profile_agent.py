@@ -1,4 +1,4 @@
-"""Agent 1 — Customer Profile Agent.
+"""Agent 1 - Customer Profile Agent.
 
 Loads the enhanced record for a customer and builds a compact summary the
 downstream agents will use in their prompts.

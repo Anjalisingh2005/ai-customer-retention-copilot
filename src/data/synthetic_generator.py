@@ -11,6 +11,8 @@ runs end-to-end with zero external dependencies.
 """
 from __future__ import annotations
 
+import os
+
 import numpy as np
 import pandas as pd
 
@@ -18,6 +20,11 @@ from src.config import settings
 from src.utils.logger import get_logger
 
 log = get_logger(__name__)
+
+# Fraction of customers whose behavioural fields are drawn as if they were the
+# opposite churn class. Higher → noisier, less separable data, lower ROC-AUC.
+# ~0.22 lands the production model near a believable ~0.85 ROC-AUC.
+BEHAVIOUR_NOISE = float(os.getenv("BEHAVIOUR_NOISE", "0.22"))
 
 # Kaggle Telco Customer Churn column schema.
 TELCO_COLUMNS = [
@@ -181,29 +188,37 @@ def add_behavioural_fields(df: pd.DataFrame) -> pd.DataFrame:
     is_churner = (df["Churn"] == "Yes").to_numpy()
     tenure = df["tenure"].to_numpy()
 
+    # Irreducible ambiguity: a fraction of customers BEHAVE like the opposite
+    # class (an engaged customer who still leaves; a quiet one who stays). This
+    # is what real data looks like — no model can perfectly separate it — and it
+    # pulls ROC-AUC down from a fake ~1.0 to a believable ~0.85. `looks_churner`
+    # drives the behavioural draws; the true `Churn` label is left untouched.
+    swap = rng.random(n) < BEHAVIOUR_NOISE
+    looks_churner = np.where(swap, ~is_churner, is_churner)
+
     # last_login_days: churners drift, loyal customers stay engaged.
     # Ranges overlap (3-30) so the classes aren't perfectly separable.
     last_login = np.where(
-        is_churner,
+        looks_churner,
         rng.integers(3, 90, n),
         rng.integers(0, 30, n),
     )
 
     # support_ticket_count: more tickets => more friction.
     base_tickets = rng.poisson(1.0, n)
-    extra = np.where(is_churner, rng.poisson(2.0, n), 0)
+    extra = np.where(looks_churner, rng.poisson(2.0, n), 0)
     tickets = base_tickets + extra
 
     # avg_response_time (hours): unhappy customers wait longer.
     # Tighter gap so distributions overlap and produce ambiguous cases.
     response = np.round(
-        np.where(is_churner, rng.gamma(2.5, 4.0, n), rng.gamma(2.2, 3.0, n)),
+        np.where(looks_churner, rng.gamma(2.5, 4.0, n), rng.gamma(2.2, 3.0, n)),
         1,
     )
 
     # nps_score: 0..10 detractor/promoter, overlapping in the 4-7 band.
     nps = np.where(
-        is_churner,
+        looks_churner,
         rng.integers(0, 8, n),
         rng.integers(4, 11, n),
     ).astype(int)
@@ -211,7 +226,7 @@ def add_behavioural_fields(df: pd.DataFrame) -> pd.DataFrame:
     # feature_usage_score 0..1 — overlapping betas so the boundary is fuzzy.
     usage = np.clip(
         np.where(
-            is_churner,
+            looks_churner,
             rng.beta(2.5, 4, n),
             rng.beta(4, 2.5, n),
         ),

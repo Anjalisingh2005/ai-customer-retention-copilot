@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: Churn Copilot — ECS Fargate service, ECR repo, S3 bucket, CloudWatch logs.
+Description: Churn Copilot - ECS Fargate service, ECR repo, S3 bucket, CloudWatch logs.
 
 Parameters:
   ProjectName:

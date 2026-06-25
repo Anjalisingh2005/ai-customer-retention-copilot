@@ -1,4 +1,4 @@
-"""Agent 4 — Retention Strategy Agent.
+"""Agent 4 - Retention Strategy Agent.
 
 The most important node. Retrieves relevant playbook chunks from FAISS, asks
 the LLM for a structured retention plan, then maps the chosen action to a

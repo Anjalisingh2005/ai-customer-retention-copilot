@@ -1,4 +1,4 @@
-"""Agent 2 — Risk Assessment Agent.
+"""Agent 2 - Risk Assessment Agent.
 
 Loads the production model + segmentation bundle. Predicts churn probability,
 computes value/risk tiers and the business segment + KMeans persona.

@@ -1,4 +1,4 @@
-# Customer Retention Policies (v3.2 — effective 2026-Q1)
+# Customer Retention Policies (v3.2 - effective 2026-Q1)
 
 ## 1. Discount Authority Matrix
 

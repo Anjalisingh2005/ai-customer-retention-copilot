@@ -1,11 +1,11 @@
 """FastAPI surface.
 
 Endpoints map 1:1 to the project spec:
-- POST /predict_churn       — churn probability + segment
-- POST /customer_analysis   — SHAP-driven explanation
-- POST /generate_strategy   — LLM + RAG recommendation
-- POST /customer_roi        — ROI table for actions
-- POST /copilot/run         — full multi-agent pipeline
+- POST /predict_churn       - churn probability + segment
+- POST /customer_analysis   - SHAP-driven explanation
+- POST /generate_strategy   - LLM + RAG recommendation
+- POST /customer_roi        - ROI table for actions
+- POST /copilot/run         - full multi-agent pipeline
 
 Plus GET /health.
 """
@@ -63,7 +63,7 @@ def _profile_or_404(customer_id: str) -> dict:
 
 def _persona_for(profile: dict) -> str:
     """Look up the KMeans persona for a single customer. Returns "Unknown" if the
-    segmentation bundle is unavailable or any feature is missing — never raises,
+    segmentation bundle is unavailable or any feature is missing - never raises,
     so it can't break /predict_churn."""
     try:
         import numpy as np

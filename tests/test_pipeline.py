@@ -1,6 +1,6 @@
 """End-to-end pipeline smoke test.
 
-This is a heavy test — it trains models, builds the FAISS index, and runs the
+This is a heavy test - it trains models, builds the FAISS index, and runs the
 full 5-agent pipeline. Skip unless the dependencies are all installed.
 """
 from __future__ import annotations

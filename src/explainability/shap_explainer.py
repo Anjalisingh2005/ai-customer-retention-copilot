@@ -92,7 +92,7 @@ class ChurnExplainer:
             return shap.TreeExplainer(self.model)
         # Logistic regression / linear fallback.
         # We need a background sample, but we don't always have one cached;
-        # use a small zeros background — fine for LR with standardized inputs.
+        # use a small zeros background - fine for LR with standardized inputs.
         background = np.zeros((1, len(self.feature_names)))
         return shap.LinearExplainer(self.model, background)
 
